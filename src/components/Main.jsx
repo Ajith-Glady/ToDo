@@ -17,6 +17,7 @@ function Main() {
             type="text"
             id="new-task"
             placeholder="Add a new task"
+            autoComplete="off"
             value={todo}
          ></input>
          <button
@@ -68,7 +69,7 @@ function Main() {
                   setList(list.filter((obj) => obj.id !== element.id));
                  }} className="fa-solid fa-xmark"></i>
 
-                 
+
                  </div>
                  </li>              
                </>
