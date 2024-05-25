@@ -106,8 +106,8 @@ function Main() {
          })
       }
 
+      <div className="clear-div">
 
-      
       {/* ------------------ Clear All button -------------------- */}
 
       {
@@ -115,6 +115,19 @@ function Main() {
             setList([])
          }} className="delete">Clear all</button>) : null
       }
+
+
+      {/* -----------------Clear completed items button ------------------ */}
+
+      {
+         list.length > 0 ? (
+         <button onClick={() => {
+            setList(list.filter((obj) => obj.status === false))
+         }} className="delete"> Clear Completed </button>):null
+      }
+      </div>
+      
+
     </div>
   );
 }
