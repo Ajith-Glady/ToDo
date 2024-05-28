@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function Main() {
   const [todo, setTodo] = useState("");
   const [list, setList] = useState([]);
+
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+   inputRef.current.focus()
+  })
 
   return (
     <div className="app">
@@ -19,6 +25,7 @@ function Main() {
             placeholder="Add a new task"
             autoComplete="off"
             value={todo}
+            ref={inputRef}
          ></input>
          <button
             id="add-task"
